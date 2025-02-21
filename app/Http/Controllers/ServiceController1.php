@@ -3,26 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use UserService;
+use App\Facades\UserServiceFacade;
 
 class ServiceController1 extends Controller
 {
     function show(Request $request){
-        // $validated=$request->validate([                           //validation rules 
-        //     'name'=>'required|min:2|max:15',
-        //     'age'=>'required|integer|between:8,24',
-        //     'stream'=>'required',
-        //     'roll'=>'required|digits:5',
-        //     'check'=>'required',
-        //     'address'=>'required'
-        // ],
-        // [                                                         // messages for violated validation rules
-        //     'required'=>'this field is required',
-        //     'name.min'=>'name must be of atleast 2 letters',
-        //     'age.between'=>'only older than 8 years and younger than 25 years can fill this form',
-        //     'digits'=>'roll no must be of 5 digits only',
-        //     'check.required'=>'check this field to submit data'
-        // ]);
+        $validated=$request->validate([                           //validation rules 
+            'name'=>'required|min:2|max:15',
+            'age'=>'required|integer|between:8,24',
+            'stream'=>'required',
+            'roll'=>'required|digits:5',
+            'check'=>'required',
+            'address'=>'required'
+        ],
+        [                                                         // messages for violated validation rules
+            'required'=>'this field is required',
+            'name.min'=>'name must be of atleast 2 letters',
+            'age.between'=>'only older than 8 years and younger than 25 years can fill this form',
+            'digits'=>'roll no must be of 5 digits only',
+            'check.required'=>'check this field to submit data'
+        ]);
 
 
 
@@ -68,10 +68,8 @@ class ServiceController1 extends Controller
 
 
       
-        // $response=UserService::process($validated);
-        // return view('serviceView1',['fetch'=>$response]);
+        $response=UserServiceFacade::process($validated);
+        return view('serviceView1',['fetch'=>$response]);
 
-
-        UserService::process('hello');
     }
 }   

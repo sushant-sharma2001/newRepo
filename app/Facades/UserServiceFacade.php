@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Facade;
 
 class UserServiceFacade extends Facade
 {
-    protected static function getFacadeAccessor()
+    protected function getFacadeAccessor()
     {
          return 'App\Services\UserService';
     }

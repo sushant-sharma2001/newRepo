@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class UrlGenController extends Controller
 {
-    function show($id)
+    function show()
     {
         // return url('/search',['query'=>'laravel','page'=>2]);
         // return url()->query('/search',['query'=>'laravel','page'=>2]);
