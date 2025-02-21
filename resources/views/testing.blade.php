@@ -1,0 +1,1 @@
+<h1> testing page accessing using redirect from home page</h1>

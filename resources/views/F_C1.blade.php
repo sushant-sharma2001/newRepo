@@ -1,0 +1,1 @@
+<h1>inside view file f_c1 accessing data here: {{$data_name}}</h1>

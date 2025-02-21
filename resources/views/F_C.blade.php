@@ -1,0 +1,1 @@
+<h1>inside view file f_c</h1>
