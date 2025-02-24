@@ -126,8 +126,8 @@ return [
     ],
 
 
-    'aliases' => Facade::defaultAliases()->merge([
-        'UserService' => App\Facades\UserServiceFacade::class,
-    ])->toArray(),
+'aliases' => [
+    'US' => App\Facades\UserServiceFacade::class,   //change US to UserService Later
+],
 
 ];

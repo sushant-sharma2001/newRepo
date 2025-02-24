@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Facades\UserServiceFacade;
+use UserService;
+use UserServiceFacade;
 
 class ServiceController1 extends Controller
 {
@@ -65,9 +66,6 @@ class ServiceController1 extends Controller
          
         // $request->flash();
         // return $request->cookie();
-
-
-      
         $response=UserServiceFacade::process($validated);
         return view('serviceView1',['fetch'=>$response]);
 

@@ -27,5 +27,7 @@ class UrlGenController extends Controller
 
         // echo route('test.show');
         // echo route('path.show',['id'=>$id]);
+
+        
     }
 }

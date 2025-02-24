@@ -6,6 +6,6 @@ class UserService
 {
     public function process($val)
     {
-        return $val;
+        return $val*10;
     }
 }

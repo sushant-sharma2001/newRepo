@@ -126,4 +126,11 @@ Route::get('/path/to/test/here',[UrlGenController::class,'show'])->name('test.sh
 Route::get('/path/{id}',[UrlGenController::class,'show'])->name('path.show');
 
 
+//user service-facade
+use App\Http\Controllers\User_Controller;
+Route::view('/','user-profile');
+Route::get('/user/{id}',[User_Controller::class,'show']);
+
+
+
 
