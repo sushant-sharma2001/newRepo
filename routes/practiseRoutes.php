@@ -132,5 +132,15 @@ Route::view('/','user-profile');
 Route::get('/user/{id}',[User_Controller::class,'show']);
 
 
+//exceptions handling
+use App\Http\Controllers\ExceptionController;
+Route::get('/er/{id}',[ExceptionController::class,'index']);
 
 
+
+//databse operations
+//query builder
+use App\Http\Controllers\DB_QueryBuilder;
+Route::get('/dbqb',[DB_QueryBuilder::class,'first']);
+//pagination 
+Route::get('/dbp',[]);
