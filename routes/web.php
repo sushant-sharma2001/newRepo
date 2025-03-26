@@ -152,3 +152,28 @@ Route::get('/', function () {
 
 //env
 // Route::view('/','retrieveEnv');
+
+
+//sessions
+use App\Http\Controllers\SessionTestController;
+Route::get('/session/index',[SessionTestController::class,'index'])->name('ind');
+Route::get('/session/store',[SessionTestController::class,'store']);
+Route::get('/session/delete',[SessionTestController::class,'destroy']);
+
+
+//authentication
+use App\Http\Controllers\AuthController;
+use App\Http\Middleware\ValidUser;
+
+Route::get('/login', function () {
+    return view('authLoginView');
+})->name('login');
+Route::get('/register', [AuthController::class, 'registerPage'])->name('registerPage');
+Route::post('/auth/register', [AuthController::class, 'register'])->name('register');
+Route::post('/auth/login/check', [AuthController::class, 'loginCheck'])->name('loginCheck');
+Route::get('/auth/dashboard', [AuthController::class, 'dashboard'])->name('dashboard')->middleware(ValidUser::class);
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+
+

@@ -13,23 +13,16 @@ use Illuminate\Support\Facades\Route;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
-        // web: __DIR__.'/../routes/web.php',                            //uncomment to use web.php
-        // commands: __DIR__.'/../routes/console.php',
-        // health: '/up',
-
-
-        // then: function () {
-        //     // Load practice routes with web middleware
-        //     Route::middleware('web')
-        //         ->group(base_path('routes/practiceRoutes.php'));
-        // },
-
-        web: __DIR__.'/../routes/practiseRoutes.php',
-        commands: __DIR__.'/../routes/console.php',                       //comment this to use original route file
+        web: __DIR__.'/../routes/web.php',                            //uncomment to use web.php
+        commands: __DIR__.'/../routes/console.php',
         health: '/up',
+
+    //     web: __DIR__.'/../routes/practiseRoutes.php',
+    //     commands: __DIR__.'/../routes/console.php',                       //comment this to use original route file
+    //     health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->append(first::class);
+        // $middleware->append(first::class);
         // $middleware->appendToGroup('check1',[
         //     Agecheck::class,
         //     Countrycheck::class

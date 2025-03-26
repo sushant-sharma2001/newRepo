@@ -127,7 +127,7 @@ return [
 
 
 'aliases' => [
-    'UserService' => App\Facades\UserServiceFacade::class,   //we can give any name to our facade here
+    'UserService' => App\Facades\UserServiceFacade::class,            //we can give any name to our facade here but we will use Service name
 ],
 
 ];

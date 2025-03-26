@@ -143,4 +143,16 @@ Route::get('/er/{id}',[ExceptionController::class,'index']);
 use App\Http\Controllers\DB_QueryBuilder;
 Route::get('/dbqb',[DB_QueryBuilder::class,'first']);
 //pagination 
-Route::get('/dbp',[]);
+use App\Http\Controllers\PaginationController;
+Route::get('/dbp',[PaginationController::class,'show']);
+
+
+//models
+//employees table data
+use App\Http\Controllers\EmployeeModelController;
+Route::get('/emp',[EmployeeModelController::class,'show']);
+//profiles table data
+use App\Http\Controllers\ProfileModelController;
+Route::get('/pro',[ProfileModelController::class,'show']);
+
+

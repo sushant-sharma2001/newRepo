@@ -4,25 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class DB_QueryBuilder extends Controller
 {
    function first(){
-    // $users=DB::table('users')->get();
-    // return $users;
+   //  $users=DB::table('users')->get();
+   //  return $users;
+   // return User::get();                                  //using model
 
     // $users=DB::table('users')->get('name');
-    // $users=DB::table('users')->get(['id','name','email']);
-    // return $users;
+   //  $users=DB::table('users')->get(['id','name','email']);
+   //  return $users;
+   // return User::get(['name','id']);                   //using model
 
-    // $users=DB::table('users')->get();
-    // foreach($users as $user){
-    //    echo "$user->name"."<br>";
-    //  }
+   //  $users=DB::table('users')->get();
+   //  foreach($users as $user){
+   //     echo "$user->name"."<br>";
+   //   }
+   // return User::pluck('name');                          //using model 
 
     //  $users=DB::table('users')->where('id','2')->get();    
     // $users=DB::table('users')->where('name','=','aman')->get();  
     // return $users;
+   //  return User::where('id','2')->get();                    //using model
 
    //  $user=DB::table('users')->where('name','aayush')->first();
    //  $users=DB::table('users')->where('name','aayush')->firstorfail();
@@ -33,13 +38,14 @@ class DB_QueryBuilder extends Controller
 
    // $user=DB::table('users')->find(2);
    // return $user;
+   // return User::find(2);                                  //using model
 
    // $names=DB::table('users')->pluck('name');
-   // foreach($names as $name){
-   //    echo "$name"."<br>";
-   // }
+   // return $names;
+   // return User::pluck('name');                             // using model 
 
-   // DB::table('users')->orderby('id')->chunk(2,function($users){
+
+   // DB::table('users')->orderby('id')->chunk(5,function($users){
    //    static $chunkNumber=1;
    //    echo "$chunkNumber"."<br>";
    //    foreach($users as $user){
@@ -50,10 +56,12 @@ class DB_QueryBuilder extends Controller
 
    // $users=DB::table('users')->count();
    // return $users;
+   // return User::count();                                   //using model
    
    // $users=DB::table('users')->max('id');
    // $users=DB::table('users')->min('id');
    // return $users;
+   // return User::min('id');                                 //using model
 
    // if(DB::table('users')->where('id',1)->exists()){
    //    echo "user with id 1 exists";
@@ -65,6 +73,7 @@ class DB_QueryBuilder extends Controller
 
    // $users=DB::table('users')->select('name','id')->get();
    // return $users;
+   // return User::select('name','id')->get();                                   //using model
 
    // $user=DB::table('users')->wherein('id',[1,7])->get();
    // return $user;
@@ -100,8 +109,10 @@ class DB_QueryBuilder extends Controller
    // return $users;
 
    // DB::table('users')->where('id',10)->delete();
-   $users=DB::table('users')->get();
-   return $users;
+   // $users=DB::table('users')->get();
+   // return $users;
 
+   // $users= DB::select('select * from users');
+   // return $users;
    }
 }
